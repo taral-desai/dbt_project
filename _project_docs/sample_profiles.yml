@@ -1,0 +1,23 @@
+dbt_training:
+  outputs:
+    dev:
+      account: [account_url]
+      database: analytics_000
+      password: [password]
+      role: developer_000
+      schema: dbt_Taral
+      threads: 4
+      type: snowflake
+      user: [username]
+      warehouse: developer_wh_000
+    prod:
+      account: [account_url]
+      database: analytics_000
+      password: [password]
+      role: developer_000 # Should be a dedicated role
+      schema: dbt_prod # May or may not be used (depending on macro)
+      threads: 5
+      type: snowflake
+      user: [username] # Should be a dedicated user
+      warehouse: developer_wh_000
+  target: dev
